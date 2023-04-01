@@ -1,4 +1,3 @@
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -15,8 +14,8 @@ class _ProductsState extends State<Products> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title:Text("Products"),
-        backgroundColor: Colors.orange.shade400,
+        automaticallyImplyLeading:false,
+        title:Text("Products"),centerTitle:true,
       ),
     );
   }

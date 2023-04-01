@@ -38,8 +38,13 @@ dependencies:
   fluttertoast:
   rolling_bottom_bar:
   http:
+  dio:
   getwidget:
   animated_splash_screen:
+  firebase_auth:
+  firebase_core:
+  awesome_dialog:
+
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +91,9 @@ flutter:
     - family: font2
       fonts:
         - asset: myfonts/HoboStd.otf
+    - family: font3
+      fonts:
+        - asset: myfonts/seguiemj.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

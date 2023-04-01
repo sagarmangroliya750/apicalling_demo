@@ -1,4 +1,6 @@
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Search extends StatefulWidget {
@@ -13,8 +15,8 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title:Text("Search"),
-        backgroundColor: Colors.orange.shade400,
+        automaticallyImplyLeading:false,
+        title:Text("Search"),centerTitle:true,
       ),
     );
   }

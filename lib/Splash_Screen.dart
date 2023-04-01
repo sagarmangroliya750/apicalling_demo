@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously, camel_case_types, avoid_unnecessary_containers
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:apicalling_demo/Login%20&%20Register/login_pg.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'Home_Navigation/Home_pg.dart';
-import 'Login.dart';
 import 'Utils.dart';
 
 class Splash_Screen extends StatefulWidget {
@@ -39,7 +38,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
     } else {
       Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) {
-          return Login();
+          return login_pg();
         },
       ));
     }
