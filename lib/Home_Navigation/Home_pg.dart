@@ -49,7 +49,9 @@ class _Home_pgState extends State<Home_pg> {
       WillPopScope(child:SafeArea(
         child: Scaffold(
           backgroundColor:Colors.blueGrey.shade200,
-          body:Column(
+          body: list.isEmpty ? Center(
+              child: CircularProgressIndicator(backgroundColor:Colors.red,color:Colors.blue)) :
+          Column(
             children: [
               Container(
                 height:250,margin:EdgeInsets.all(15),
@@ -58,13 +60,14 @@ class _Home_pgState extends State<Home_pg> {
                     color:Colors.white,borderRadius:BorderRadius.circular(30),
                     image:DecorationImage(image:NetworkImage("https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"))
                 ),
-                child: Row(
+                child: Column(
                   children: [
-                    Column(
+                    Row(
+                      mainAxisAlignment:MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           height:45,width:45,
-                          margin:EdgeInsets.only(right:110,top:10),
+                          margin:EdgeInsets.only(left:10,top:10),
                           child: FloatingActionButton(
                             backgroundColor:Colors.red.shade300,
                             onPressed: () {
@@ -79,7 +82,6 @@ class _Home_pgState extends State<Home_pg> {
                                     TextButton(onPressed: () {
                                       Navigator.pop(context);
                                     },child:Text("No",style:TextStyle(color:Colors.red),)),
-
                                     TextButton(onPressed: () {
                                       Fluttertoast.showToast(
                                           msg: "Logged Out..",
@@ -100,25 +102,42 @@ class _Home_pgState extends State<Home_pg> {
                             },
                             child:Icon(Icons.logout_rounded),),
                         ),
-                        Container(
-                          margin:EdgeInsets.only(top:100,left:20),
-                          child:Text(" The Most \n Unique Designs",style:TextStyle(fontSize:22,fontFamily:"font2")),
-                        ),
-                        Container(
-                          margin:EdgeInsets.only(right:37,top:10),
-                          child:Text("For Daily Uses",style:TextStyle(fontSize:20,fontFamily:"font1"),),
-                        )
+                        // Container(
+                        //   height:45,width:45,
+                        //   margin:EdgeInsets.only(right:10,top:10),
+                        //   child: FloatingActionButton(onPressed: () {
+                        //     Navigator.push(context,MaterialPageRoute(builder:(context) {
+                        //       return Cart(m!['id'.length]);
+                        //     },));
+                        //   },child:Icon(Icons.shopping_cart)),
+                        // ),
                       ],
                     ),
-                    Container(
-                      height:50,width:110,
-                      margin:EdgeInsets.only(top:160,left:20),
-                      child: ElevatedButton(
-                          style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.black87),
-                              elevation: MaterialStateProperty.all(10),shape:MaterialStateProperty.all(RoundedRectangleBorder(borderRadius:BorderRadius.circular(20)))
-                          ),
-                          onPressed: () => "", child:Text("Explore",style:TextStyle(fontSize:16,letterSpacing:1.5))),
-                    )
+                    Row(
+                      mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              margin:EdgeInsets.only(top:100,left:10),
+                              child:Text(" The Most \n Unique Designs",style:TextStyle(fontSize:22,fontFamily:"font2")),
+                            ),
+                            Container(
+                              margin:EdgeInsets.only(right:40,top:10),
+                              child:Text("For Daily Uses",style:TextStyle(fontSize:20,fontFamily:"font1"),),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height:50,width:110,
+                          margin:EdgeInsets.only(top:130,right:10),
+                          child: ElevatedButton(
+                              style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.black87),
+                                  elevation: MaterialStateProperty.all(10),shape:MaterialStateProperty.all(RoundedRectangleBorder(borderRadius:BorderRadius.circular(20)))
+                              ),
+                              onPressed: () => "", child:Text("Explore",style:TextStyle(fontSize:16,letterSpacing:1.5))),
+                        )
+                      ],)
                   ],
                 ),
               ),

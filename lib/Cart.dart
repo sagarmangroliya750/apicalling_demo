@@ -26,7 +26,7 @@ class _CartState extends State<Cart> {
   }
   getData()
   async {
-    var url = Uri.https('fakestoreapi.com', 'products/${widget.id}');
+    var url = Uri.https('fakestoreapi.com','products/${widget.id}');
     var response = await http.get(url);
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
@@ -42,7 +42,9 @@ class _CartState extends State<Cart> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  m == null ? Center(child:CircularProgressIndicator(backgroundColor:Colors.red,
+        color:Colors.blue)) :
+    Scaffold(
       backgroundColor:Colors.blueGrey.shade200,
       appBar:AppBar(
         title:Row(children: [
@@ -53,7 +55,7 @@ class _CartState extends State<Cart> {
         backgroundColor: Colors.blueGrey,
       ),
       body:ListView.builder(
-        itemCount:m!['id'],
+        itemCount:1,
         itemBuilder: (context, index) {
         return SizedBox(
           height:200,
